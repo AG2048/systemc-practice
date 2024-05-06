@@ -6,6 +6,7 @@ SC_MODULE(and2){
     sc_in<DT>   a;
     sc_in<DT>   b;
     sc_out<DT>  f;
+    sc_in<bool> clk; // clock, bool = 1 wire
 
     // function with no parameter
     void func(){
@@ -16,7 +17,7 @@ SC_MODULE(and2){
     // constructor, name must be same
     SC_CTOR(and2){
         SC_METHOD(func); // function is gonna run "func"
-        sensitive << a << b; // tell this to run whenever a and b changes
+        sensitive << clk.pos(); // rising edge (posedge), or clk.neg()
 
 
     }
