@@ -3,10 +3,13 @@
 SC_MODULE(and2){
     // sc_in<> has .read()
     // sc_out<> has .write()
-    sc_in<DT>   a;
-    sc_in<DT>   b;
-    sc_out<DT>  f;
+    sc_in<sc_uint<1>>   a, b;
+    sc_out<sc_uint<1>>  f;
     sc_in<bool> clk; // clock, bool = 1 wire
+
+    //data types:
+    //sc_uint<N> = unsigned (N is the bitwidth): sc_uint<3> x; x = 0-7
+    //sc_int<N> = signed
 
     // function with no parameter
     void func(){
