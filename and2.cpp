@@ -15,11 +15,14 @@ SC_MODULE(and2){
 
     // constructor, name must be same
     SC_CTOR(and2){
+        SC_METHOD(func); // function is gonna run "func"
+        sensitive << a << b; // tell this to run whenever a and b changes
+
 
     }
 
     // 3 types of threads
-    SC_METHOD()  // trigger once every event, same as @always, good for counters / combs
-    SC_THREAD() // only once at beginning, and ends after they are done. can do while() to keep it running
-    SC_CTHREAD() // clock thread. only run per clock edge. can take more than 1 clock to execute. 
+    // SC_METHOD()  // trigger once every event, same as @always, good for counters / combs
+    // SC_THREAD() // only once at beginning, and ends after they are done. can do while() to keep it running
+    // SC_CTHREAD() // clock thread. only run per clock edge. can take more than 1 clock to execute. 
 }
