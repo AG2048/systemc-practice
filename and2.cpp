@@ -19,7 +19,8 @@ SC_MODULE(and2){
 
     // constructor, name must be same
     SC_CTOR(and2){
-        SC_METHOD(func); // function is gonna run "func"
+        SC_METHOD(func); // function is gonna run "func" as a "method" thread
+        //sensitive << a << b; //sensitive to a or b change
         sensitive << clk.pos(); // rising edge (posedge), or clk.neg()
 
 
