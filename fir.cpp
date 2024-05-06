@@ -13,8 +13,9 @@ SC_MODULE(fir){
         reset_signal_is(rst, true); // Reset is asserted high, false will mean reset asserted low. This resets SC_CTHREAD
 
     }
+}
 
-    //Coefficients for each FIR
+//Coefficients for each FIR
     const sc_uint<8> coef[5] = {
         18,
         77,
@@ -22,7 +23,6 @@ SC_MODULE(fir){
         77,
         18
     }
-}
 
 // FIR Main thread (fir:: scopes fir_main under fir module)
 void fir::fir_main(void){
