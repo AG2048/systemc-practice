@@ -9,8 +9,8 @@ SC_MODULE(tb){
     void source(); // leaving the behaviour codes to other files
     void sink();
 
-    SC_CTOR(fir){
+    SC_CTOR(tb){
         SC_CTHREAD(sink, clk.pos());
         SC_CTHREAD(source, clk.pos());
     }
-}
+};

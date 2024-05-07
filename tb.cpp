@@ -19,7 +19,7 @@ void tb::source(){
         }else{
             tmp = 0;
         }
-        imp.write(tmp);
+        inp.write(tmp);
         wait();
     }
 }

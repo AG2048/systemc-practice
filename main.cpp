@@ -36,11 +36,10 @@ SC_MODULE(SYSTEM){
         delete tb0;
         delete fir0;
     }
-        
-}
+};
 
 // Main code:
-SYSTEM *top = NULL;
+SYSTEM *top = nullptr;
 
 int sc_main(int argc, char* argv[]){
     top = new SYSTEM("top"); // Define new top module

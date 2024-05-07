@@ -7,11 +7,12 @@
         107,
         77,
         18
-    }
+    };
 
 // FIR Main thread (fir:: scopes fir_main under fir module)
 void fir::fir_main(void){
     // This code continuously runs your multi-clock-cycle code, unless reset signal is received then it breaks out the while loop
+    sc_int<16> taps[5];
 
     // RESET behaviour (local var or outputs)
     outp.write(0); // reset output
@@ -23,7 +24,7 @@ void fir::fir_main(void){
         for(int i = 4; i > 0; i--){
             taps[i] = taps[i-1]; // shift data
         }
-        taps[0] = input.read(); // load in new data
+        taps[0] = inp.read(); // load in new data
         // Algo
         sc_int<16> val;
         for(int i = 0; i < 5; i++){

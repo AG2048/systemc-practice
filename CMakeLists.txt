@@ -1,23 +1,38 @@
 cmake_minimum_required(VERSION 3.16)
-find_package(SystemCLanguage CONFIG REQUIRED)
+project(SystemCPractice)  # Name your project
 
+# Specify the C++ standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+find_package(SystemCLanguage CONFIG REQUIRED)  # Find SystemC
+
+# Include directories
 include_directories(
-  ./
+    ${CMAKE_CURRENT_SOURCE_DIR}  # Include current source dir for header files
 )
 
-set(srcfiles
-  main.cpp
-  fir.cpp
-  tb.cpp
+# Source and header files
+set(SRC_FILES
+    main.cpp
+    fir.cpp
+    tb.cpp
 )
 
-set(hdrfiles
-  main.hpp
-  fir.hpp
-  tb.hpp
+set(HEADER_FILES
+    fir.hpp
+    tb.hpp
 )
 
+# Add compile options
 add_compile_options(-Wall -Wextra -pedantic)
 
-add_library(design STATIC ${srcfiles} ${hdrfiles})
-target_link_libraries(design PUBLIC SystemC::systemc booksim noc)
+# Create a static library
+add_library(design STATIC ${SRC_FILES} ${HEADER_FILES})
+
+# Link the library with SystemC and other libraries
+target_link_libraries(design PUBLIC SystemC::systemc)
+
+# If executable is needed:
+# add_executable(main_exec ${SRC_FILES})
+# target_link_libraries(main_exec PUBLIC design)

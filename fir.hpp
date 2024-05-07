@@ -12,4 +12,4 @@ SC_MODULE(fir){
         SC_CTHREAD(fir_main, clk.pos()); // SC_CTHREAD runs fir_main when the clk sensitive edge occurs
         reset_signal_is(rst, true); // Reset is asserted high, false will mean reset asserted low. This resets SC_CTHREAD
     }
-}
+};
