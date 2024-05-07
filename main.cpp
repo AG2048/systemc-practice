@@ -11,6 +11,11 @@ SC_MODULE(SYSTEM){
     sc_signal<sc_int<16>>   inp_sig;
     sc_signal<sc_int<16>>   outp_sig;
     sc_signal<bool>         rst_sig;
+    // Handshake
+    sc_signal<bool>         inp_sig_vld;
+    sc_signal<bool>         inp_sig_rdy;
+    sc_signal<bool>         outp_sig_vld;
+    sc_signal<bool>         outp_sig_rdy;
     
     // Defining a clock signal (I'm assuming it's a special class)
     sc_clock clk_sig;
@@ -24,6 +29,11 @@ SC_MODULE(SYSTEM){
         tb0->rst(rst_sig);
         tb0->inp(inp_sig);
         tb0->outp(outp_sig);
+        // Handshake
+        tb0->inp_vld(inp_sig_vld);
+        tb0->inp_rdy(inp_sig_rdy);
+        tb0->outp_vld(outp_sig_vld);
+        tb0->outp_rdy(outp_sig_rdy);
 
         fir0 = new fir("fir0"); // defining fir0 as a new fir called fir0
         fir0->clk(clk_sig);
