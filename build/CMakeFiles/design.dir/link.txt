@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdesign.a CMakeFiles/design.dir/main.cpp.o CMakeFiles/design.dir/fir.cpp.o CMakeFiles/design.dir/tb.cpp.o
+/usr/bin/ranlib libdesign.a

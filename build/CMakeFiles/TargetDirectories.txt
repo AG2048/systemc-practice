@@ -1,0 +1,4 @@
+/home/gongran2/systemc-practice/build/CMakeFiles/design.dir
+/home/gongran2/systemc-practice/build/CMakeFiles/main_exec.dir
+/home/gongran2/systemc-practice/build/CMakeFiles/edit_cache.dir
+/home/gongran2/systemc-practice/build/CMakeFiles/rebuild_cache.dir
