@@ -6,7 +6,7 @@ void tb::source(){
     inp.write(0);
     rst.write(1);
     // Handshake
-    inp_valid.write(0); // Data is not ready
+    inp_vld.write(0); // Data is not ready
 
     wait();
 
