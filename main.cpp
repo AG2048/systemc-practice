@@ -31,7 +31,19 @@ SC_MODULE(SYSTEM){
         fir0->inp(inp_sig);
         fir0->outp(outp_sig);
     }
+    // Destructor
+    ~SYSTEM(){
+        delete tb0;
+        delete fir0;
+    }
+        
+}
 
-    ~SYSTEM()
-        // Destructor
+// Main code:
+SYSTEM *top = NULL;
+
+int sc_main(int argc, char* argv[]){
+    top = new SYSTEM("top"); // Define new top module
+    sc_start(); // run, start a simulation
+    return 0;
 }
