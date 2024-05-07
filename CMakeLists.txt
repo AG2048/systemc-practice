@@ -36,3 +36,6 @@ target_link_libraries(design PUBLIC SystemC::systemc)
 # If executable is needed:
 # add_executable(main_exec ${SRC_FILES})
 # target_link_libraries(main_exec PUBLIC design)
+# Create executable that runs sc_main in main.cpp
+add_executable(main_exec main.cpp)  # This line tells CMake to compile main.cpp as an executable
+target_link_libraries(main_exec PUBLIC design)  # Link the 'design' library with the executable
