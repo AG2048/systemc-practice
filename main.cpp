@@ -1,6 +1,6 @@
 #include <systemc.h>
 #include <fir.hpp>
-#include <tb.h>
+#include <tb.hpp>
 
 SC_MODULE(SYSTEM){
     // Module declarations
