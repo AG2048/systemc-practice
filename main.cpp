@@ -40,6 +40,11 @@ SC_MODULE(SYSTEM){
         fir0->rst(rst_sig);
         fir0->inp(inp_sig);
         fir0->outp(outp_sig);
+        // Handshake
+        fir0->inp_vld(inp_sig_vld);
+        fir0->inp_rdy(inp_sig_rdy);
+        fir0->outp_vld(outp_sig_vld);
+        fir0->outp_rdy(outp_sig_rdy);
     }
     // Destructor
     ~SYSTEM(){
